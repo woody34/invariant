@@ -1,8 +1,11 @@
-export function invariant (condition: boolean, message?: string | (() => string)): asserts condition {
+export function invariant(
+  condition: boolean,
+  message?: string | (() => string),
+): asserts condition {
   if (condition) {
-    return
+    return;
   }
 
-  const _message = typeof message === 'function' ? message() : message
-  throw new Error(`Invariant failed: ${_message}`)
-} 
+  const _message = typeof message === "function" ? message() : message;
+  throw new Error(`Invariant failed: ${_message}`);
+}
