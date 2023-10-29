@@ -1,4 +1,4 @@
-export function invariant(
+export default function invariant(
   condition: boolean,
   message?: string | (() => string),
 ): asserts condition {
@@ -9,5 +9,3 @@ export function invariant(
   const _message = typeof message === "function" ? message() : message;
   throw new Error(`Invariant failed: ${_message}`);
 }
-
-export default invariant;
